@@ -7,12 +7,6 @@ pipeline{
         sh 'mvn compile'
       }       
     }
-    stage('Test'){
-      agent any
-      steps{
-        sh 'mvn test'
-      }
-    } 
     stage('Package'){
       agent any
       steps{
