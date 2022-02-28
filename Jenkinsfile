@@ -7,12 +7,6 @@ pipeline{
         sh 'mvn compile'
       }       
     }
-    stage('Code Quality'){
-      agent any
-      steps{
-        sh 'echo Sonarqube Code Quality Check Done'
-      }
-    }
     stage('Test'){
       agent any
       steps{
@@ -23,12 +17,6 @@ pipeline{
       agent any
       steps{
         sh 'mvn package'
-      }
-    }
-    stage('Upload War File To Artifactory'){
-      agent any
-      steps{
-        sh 'echo Uploaded War file to Artifactory'
       }
     }
     stage('Deploy'){
